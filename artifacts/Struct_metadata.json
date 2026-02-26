@@ -1,0 +1,108 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "company",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "position",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "salary",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "time",
+						"type": "string"
+					}
+				],
+				"name": "addCustomer",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "customers",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "Company",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "Position",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "Salary",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "TimeStarted",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Structs/structs.sol": "Struct"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Structs/structs.sol": {
+			"keccak256": "0x748003844826d82f5073a35c3ae947349e22d5b2c651fa9b9281cccb03d602f9",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://2b65c052b32baab540ac8c27b9e529a4d52a13f674690b7df4978366bfc9e108",
+				"dweb:/ipfs/Qmek8AcRWhfzqTkyFErJPXehYsJ8nLWn7sSpVeVNJJnMTk"
+			]
+		}
+	},
+	"version": 1
+}

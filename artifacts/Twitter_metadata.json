@@ -9,11 +9,11 @@
 				"inputs": [
 					{
 						"internalType": "string",
-						"name": "tweet",
+						"name": "message",
 						"type": "string"
 					}
 				],
-				"name": "createTweet",
+				"name": "addTweet",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -22,16 +22,84 @@
 				"inputs": [
 					{
 						"internalType": "address",
-						"name": "_owner",
+						"name": "author",
 						"type": "address"
+					}
+				],
+				"name": "getAllTweets",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "Author",
+								"type": "address"
+							},
+							{
+								"internalType": "string",
+								"name": "Message",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "TimeTweeted",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "Likes",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct Twitter.Tweet[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "author",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "i",
+						"type": "uint256"
 					}
 				],
 				"name": "getTweet",
 				"outputs": [
 					{
-						"internalType": "string",
+						"components": [
+							{
+								"internalType": "address",
+								"name": "Author",
+								"type": "address"
+							},
+							{
+								"internalType": "string",
+								"name": "Message",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "TimeTweeted",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "Likes",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct Twitter.Tweet",
 						"name": "",
-						"type": "string"
+						"type": "tuple"
 					}
 				],
 				"stateMutability": "view",
@@ -43,14 +111,34 @@
 						"internalType": "address",
 						"name": "",
 						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
 					}
 				],
 				"name": "tweets",
 				"outputs": [
 					{
+						"internalType": "address",
+						"name": "Author",
+						"type": "address"
+					},
+					{
 						"internalType": "string",
-						"name": "",
+						"name": "Message",
 						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "TimeTweeted",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "Likes",
+						"type": "uint256"
 					}
 				],
 				"stateMutability": "view",
@@ -85,11 +173,11 @@
 	},
 	"sources": {
 		"Twitter/twitter.sol": {
-			"keccak256": "0xd2aa6e812d9b8f5fc2f6b65c83e95feb1d8615cbcaaaeaa02648448dd77316c7",
+			"keccak256": "0x4743ab3bb769d36b27dca68a31fea4addba63ca0f6f9d2a6acd70a7afaa1f88d",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://2ff7cfc2c0a39ffa598b8942335cb5b811797443756251a0d49c70a752ae6bc6",
-				"dweb:/ipfs/QmY39oKXsNeZxWxi2D9V7eUdSVnt3RACFuYbeMrboyfLZD"
+				"bzz-raw://8a4ff92456fc56da0f27aa8762db1b7274f109c8959811de4b089b6ab773e533",
+				"dweb:/ipfs/QmegWWj5RDsjfxo2fJSDzHVYrKy2tH1Bjt1U2dPa4HdZfY"
 			]
 		}
 	},
