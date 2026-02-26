@@ -1,6 +1,6 @@
 # 🔷 Learn Solidity — From Zero to Smart Contract Developer
 
-> A structured, beginner-friendly course repository for learning Solidity and Ethereum smart contract development.
+> A structured, beginner-friendly course repository for learning Solidity and Ethereum smart contract development. 
 
 ---
 
