@@ -10,7 +10,7 @@ Links the tweet to their wallet address
 
 Allows anyone to read a tweet by wallet address
 
-If you're new to Solidity — this README will help you understand every line.
+If you're new to Solidity — this README will help you understand every line. 
 
 📚 What You Will Learn
 
@@ -170,3 +170,4 @@ Writing data (createTweet) costs gas
 Reading data (getTweet) does NOT cost gas externally
 
 Storing long strings is expensive
+
