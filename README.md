@@ -93,7 +93,7 @@ No prior Solidity or Web3 experience needed. ✅
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/learn-solidity.git
+git clone https://github.com/ishemagurnaud0-maker/solidity_101.git
 cd learn-solidity
 ```
 
