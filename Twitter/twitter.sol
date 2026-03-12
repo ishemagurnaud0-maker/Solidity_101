@@ -15,18 +15,38 @@ struct Tweet{
 }
 
 mapping(address => Tweet[]) public tweets;
+uint16 public MAXTWEET_LENGTH = 280;
+address public owner;
 
-    function addTweet(string memory message) public{
+constructor(){
+    owner = msg.sender;
+}
+
+modifier onlyOwner(){
+    require(msg.sender == owner,"You are not the owner.");
+    _;
+} 
+
+function changeTweetLength(uint16 newTweetLength) public onlyOwner{
+    MAXTWEET_LENGTH =newTweetLength;
+}
+
+
+
+function addTweet(string memory message) public {
+
+                    require(bytes(message).length > MAXTWEET_LENGTH,"The tweet is too long.");
+
             Tweet memory newTweet = Tweet({
-                Author: msg.sender,
+                Author: msg.sender, 
                 Message:message,
-                TimeTweeted:block.timestamp,
+                TimeTweeted:block.timestamp ,
                 Likes:0
             });
 
             tweets[msg.sender].push(newTweet);
          }
-
+ 
         function getTweet(address author,uint256 i) public view returns(Tweet memory){
             return tweets[author][i];
         }
