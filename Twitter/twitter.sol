@@ -6,6 +6,10 @@ pragma solidity ^0.8.20;
 
 contract Twitter{
 
+    event CreatedNewTweet(address indexed author,uint256 timestamp,string message,uint256 indexed id);
+    event LikedTweet(uint256 indexed newLikeCount , address indexed TweetAuthor,address indexed liker,uint256 TweetId);
+    event UnlikedTweet(uint256 indexed newLikeCount,address indexed TweetAuthor,address indexed liker ,uint256 TweetId);
+
 struct Tweet{
     uint256 id;
     address Author;
@@ -34,7 +38,7 @@ function changeTweetLength(uint16 newTweetLength) public onlyOwner{
 
 
 
-function addTweet(string memory message) public {
+function createTweet(string memory message) public {
 
                     require(bytes(message).length <= MAXTWEET_LENGTH,"The tweet is too long.");
 
@@ -47,6 +51,8 @@ function addTweet(string memory message) public {
             });
 
             tweets[msg.sender].push(newTweet);
+
+            emit CreatedNewTweet(newTweet.Author,newTweet.TimeTweeted,newTweet.Message,newTweet.id);
          }
  
         function getTweet(address author,uint256 id) public view returns(Tweet memory){
@@ -60,13 +66,18 @@ function addTweet(string memory message) public {
             require(id < tweets[author].length,"Tweet doesn't not exist.");
             require(msg.sender != author,"You can not like your own tweet.");
             tweets[author][id].Likes++;
+            
+            emit LikedTweet(tweets[author][id].Likes,author,msg.sender,id);
         }
 
          function unlikeTweet(uint256 id,address author) external {
              require(id < tweets[author].length,"Tweet doesn't not exist.");
              require(tweets[author][id].Likes > 0,"Tweet has no likes.");
              require(msg.sender != author,"You can not like your own tweet.");
+
              tweets[author][id].Likes--;
+
+             emit UnlikedTweet(tweets[author][id].Likes,author, msg.sender, id);
          }   
     }
 
