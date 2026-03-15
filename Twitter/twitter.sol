@@ -78,7 +78,16 @@ function createTweet(string memory message) public {
              tweets[author][id].Likes--;
 
              emit UnlikedTweet(tweets[author][id].Likes,author, msg.sender, id);
-         }   
+         } 
+
+         function getTotalLikes(address author) external  view returns(uint256) {
+                    uint256 totalLikes = 0;
+                for (uint id = 0; id < tweets[author].length; id++){
+                        totalLikes += tweets[author][id].Likes;
+                }
+
+                return totalLikes;
+         } 
     }
 
 
